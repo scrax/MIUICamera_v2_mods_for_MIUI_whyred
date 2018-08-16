@@ -1,7 +1,7 @@
-id=template
-name=Template Module
-version=v1
-versionCode=1
-author=topjohnwu
-description=A short description
+id=MIUIcamerav2_whyred
+name=MIUIcamera v2 for whyred (Redmi Note 5 / pro)
+version=v0.8 (2018-08-13)
+versionCode=08
+author=Scrax
+description=MIUI camera v2 port with: full manual, portrait mode, expanded burst shot, live HDR, group selfie, object tracking, torch mode, HHT, magic mirror, age and gender, beautify, straighten, tilt-shift, focus peaking, FP shutter (system wide), 4k video mode, slowmotion, timelapse, video image stabilization, full size panorama and effects, better audio record (by rocker00).
 minMagisk=1500

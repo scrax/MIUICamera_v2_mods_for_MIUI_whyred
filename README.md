@@ -1,30 +1,75 @@
-# Magisk Module Template
+# **MIUI Camera v2 port for whyred (Redmi note 5 / pro)**
 
-This `README.md` will be shown in Magisk Manager. Place any information / changelog / notes you like.
-
-**Please update `README.md` if you want to submit your module to the online repo!**
-
-Github has its own online markdown editor with a preview feature, you can use it to update your `README.md`! If you need more advanced syntax, check the [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-For more information about modules and repos, please check the [official documentations](https://github.com/topjohnwu/Magisk/blob/master/docs/modules.md)
-
----
-# **Module Name**
 ## Description
-Description here
+This module brings MIUI Camera v2 (from Mi A2) to aosp and Los based ROM on whyred.
+
+Tested on LineageOS 15.1 (microG version),
+
+No conflicts with gcam and camera2 API.
+
+No editing of build.prop by the module (conflicts free)
+
+Needs permissions enabled manually.
+
+## Functions
+PHOTO
+
+- Portrait mode
+- Full manual mode (1/4s max shutter)
+- Square mode
+- Panorama (full quality)
+- Peak focus (when manual focus)
+- Grid toggle
+- Object tracking shot
+- Scene modes
+- Tonal and color presets
+- HHT
+- Straighten
+- Tilt-shift
+- Beautify and Beautify pro (v2)
+- Timer (3s and 5s)
+- HDR (on, off, auto), HDR pro (default) and live HDR
+- Torch mode (back and front)
+- Age & gender and magic mirror modes (front camera)
+- Increased burst shoot (100 pics)
+- Fingerprint shutter enabled by default (system wide)
+- Camera sound toggle
+
+VIDEO
+
+- 4K record (30fps)
+- Video image stabilization (software)
+- Slow motion
+- Time lapse
+
 ## Changelog
-Changelog here
-## Requirements
-- Requirement 1
-- Requirement *
-- Requirement n
+
+v0.1      First test porting from Mi A2 camera with more functions
+
+v0.2      Disabled AI (gives no visible differences) and zoom options (sometimes use the worst camera)
+
+v0.3      Enabled slow motion, image stabilization and FP shutter. Disabled portrait mode
+
+v0.4      Fixed system camera shutter sound, enabled magic mirror and age&gender, full size panorama and effects.
+
+v0.5      Added initial support to Mi A1, Mi 6X, Mi A2/lite, Redmi Note 3, Redmi Note 4 
+
+v0.6      Enabled portrait mode (after LineageOS fixed the issues).
+
+v0.7      Removed all devices but whyred, set default HDR pro (back) and auto (front)
+
+v0.8      Added audio recording fix by rocker00, restored group selfie (for test)
+
 ## Instructions
-Instructions here
-- Or other instructions here
-- Followed by more instructions
-1. Or a list of instructions
-2. With more instructions
+Install module and reboot;
+
+Before starting camera app manually enable permissions.
+
+**camera2 API is not required**
+
 ## Links
 [Module XDA Forum Thread](https://forum.xda-developers.com/apps/magisk/module-url-here "Module official XDA thread")
+
+[Audio recording fix XDA Thread](https://forum.xda-developers.com/redmi-note-5-pro/themes/magisk-fix-bad-camcorder-audio-quality-t3828711 "original audio record fix module thread")
 
 [Latest stable Magisk](http://www.tiny.cc/latestmagisk)

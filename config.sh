@@ -28,7 +28,7 @@ AUTOMOUNT=true
 PROPFILE=false
 
 # Set to true if you need post-fs-data script
-POSTFSDATA=false
+POSTFSDATA=true
 
 # Set to true if you need late_start service script
 LATESTARTSERVICE=false
@@ -40,9 +40,19 @@ LATESTARTSERVICE=false
 # Set what you want to show when installing your mod
 
 print_modname() {
-  ui_print "*******************************"
-  ui_print "     Magisk Module Template    "
-  ui_print "*******************************"
+  ui_print "******************************"
+  ui_print "      MIUIcamera v2 for:      "
+  ui_print "            whyred            "
+#  ui_print "            tissot            "
+#  ui_print "             wayne            "
+#  ui_print "            jasmine           "
+#  ui_print "             daisy            "
+#  ui_print "             mido             "
+#  ui_print "             kenzo            "
+  ui_print "******************************"
+  ui_print "             v0.8             "
+  ui_print "          2018-08-13          "
+  ui_print "******************************"
 }
 
 ##########################################################################################
