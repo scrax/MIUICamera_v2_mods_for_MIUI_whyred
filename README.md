@@ -42,6 +42,10 @@ VIDEO
 - Slow motion
 - Time lapse
 
+AUDIO
+
+- Audio recording fix (by @rocker00)
+
 ## Changelog
 
 v0.1      First test porting from Mi A2 camera with more functions
@@ -58,7 +62,7 @@ v0.6      Enabled portrait mode (after LineageOS fixed the issues).
 
 v0.7      Removed all devices but whyred, set default HDR pro (back) and auto (front)
 
-v0.8      Added audio recording fix by rocker00, restored group selfie (for test)
+v0.8      Added audio recording fix by @rocker00, restored group selfie (for test)
 
 ## Instructions
 Install module and reboot;
@@ -73,3 +77,12 @@ Before starting camera app manually enable permissions.
 [Audio recording fix XDA Thread](https://forum.xda-developers.com/redmi-note-5-pro/themes/magisk-fix-bad-camcorder-audio-quality-t3828711 "original audio record fix module thread")
 
 [Latest stable Magisk](http://www.tiny.cc/latestmagisk)
+
+## Contributions
+slow-mo fix by @Dyneteve
+
+sound fix by @lawong
+
+audio recording fix by @rocker00
+
+video recording improvements by @carlosggb and @ARNOB XENON
