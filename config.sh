@@ -50,8 +50,8 @@ print_modname() {
 #  ui_print "             mido             "
 #  ui_print "             kenzo            "
   ui_print "******************************"
-  ui_print "             v0.8             "
-  ui_print "          2018-08-13          "
+  ui_print "             v0.9             "
+  ui_print "          2018-08-17          "
   ui_print "******************************"
 }
 

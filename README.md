@@ -49,21 +49,23 @@ AUDIO
 
 ## Changelog
 
-v0.1      First test porting from Mi A2 camera with more functions
+v0.1      First test porting from Mi A2 camera with more functions.
 
-v0.2      Disabled AI (gives no visible differences) and zoom options (sometimes use the worst camera)
+v0.2      Disabled AI (gives no visible differences) and zoom options (sometimes use the worst camera).
 
-v0.3      Enabled slow motion, image stabilization and FP shutter. Disabled portrait mode
+v0.3      Enabled slow motion, image stabilization and FP shutter. Disabled portrait mode.
 
 v0.4      Fixed system camera shutter sound, enabled magic mirror and age&gender, full size panorama and effects.
 
-v0.5      Added initial support to Mi A1, Mi 6X, Mi A2/lite, Redmi Note 3, Redmi Note 4 
+v0.5      Added initial support to Mi A1, Mi 6X, Mi A2/lite, Redmi Note 3, Redmi Note 4. 
 
 v0.6      Enabled portrait mode (after LineageOS fixed the issues).
 
-v0.7      Removed all devices but whyred, set default HDR pro (back) and auto (front)
+v0.7      Removed all devices but whyred, set default HDR pro (back) and auto (front).
 
-v0.8      Added audio recording fix by @rocker00, restored group selfie (for test)
+v0.8      Added audio recording fix by @rocker00, restored group selfie (for test).
+
+v0.9      Fixed video start and end record sounds.
 
 ## Instructions
 Install module and reboot;
