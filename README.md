@@ -3,7 +3,7 @@
 ## Description
 This module brings MIUI Camera v2 (from Mi A2) to aosp and Los based ROM on whyred.
 
-Tested on LineageOS 15.1 (microG version),
+Tested on LineageOS 15.1 (microG version) android Oreo.
 
 No conflicts with gcam and camera2 API.
 
