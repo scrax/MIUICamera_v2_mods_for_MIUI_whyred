@@ -72,7 +72,7 @@ Before starting camera app manually enable permissions.
 **camera2 API is not required**
 
 ## Links
-[Module XDA Forum Thread](https://forum.xda-developers.com/apps/magisk/module-url-here "Module official XDA thread")
+[Module XDA Forum Thread](https://forum.xda-developers.com/redmi-note-5-pro/themes/magisk-miui-camera-v2-port-mods-t3830475 "Module official XDA thread")
 
 [Audio recording fix XDA Thread](https://forum.xda-developers.com/redmi-note-5-pro/themes/magisk-fix-bad-camcorder-audio-quality-t3828711 "original audio record fix module thread")
 
