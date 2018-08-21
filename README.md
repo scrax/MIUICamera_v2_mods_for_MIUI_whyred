@@ -67,10 +67,12 @@ v0.8      Added audio recording fix by @rocker00, restored group selfie (for tes
 
 v0.9      Fixed video start and end record sounds.
 
+v0.10     Granted needed permissions by default.
+
 ## Instructions
 Install module and reboot;
 
-Before starting camera app manually enable permissions.
+~~Before starting camera app, manually enable permissions.~~
 
 **camera2 API is not required**
 
