@@ -178,7 +178,7 @@
     <bool name="camera_is_support_portrait_switch">true</bool>
     <!--whether process clcc in hfp pending state CHANGED-->
     <bool name="process_clcc_in_pending_state">true</bool>
-    <!--ADDED-->
+<!--ADDED-->
     <!--whether support groupshot mode  in camera -->
     <bool name="support_camera_groupshot">true</bool>
     <!-- We use this to remove finger print capture of Camera -->
@@ -199,4 +199,12 @@
     <bool name="support_camera_square_mode">true</bool>
     <!--whether support camera video high frame-->
     <bool name="support_camera_video_high_frame">true</bool>
+    <!--whether support camera super resolution-->
+    <bool name="support_super_resolution">true</bool>
+    <!--whether support tele asd night in camera-->
+    <bool name="is_support_tele_asd_night">true</bool>
+    <!-- whether camera supports paralell process -->
+    <bool name="support_parallel_process">true</bool>
+    <!-- whether this device is Android one -->
+    <bool name="is_android_one_device">true</bool>
 </features>
