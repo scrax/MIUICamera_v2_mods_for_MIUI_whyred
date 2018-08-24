@@ -184,7 +184,7 @@
     <!-- We use this to remove finger print capture of Camera -->
     <bool name="front_fingerprint_sensor">true</bool>
     <!--whether support ai scene in camera -->
-    <bool name="camera_supported_ai_scene">false</bool>
+    <bool name="camera_supported_ai_scene">true</bool>
     <!--whether support optical zoom in camera-->
     <bool name="is_support_optical_zoom">false</bool>
     <!--whether support magic mirror in camera-->
