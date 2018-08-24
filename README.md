@@ -69,6 +69,8 @@ v0.9      Fixed video start and end record sounds.
 
 v0.10     Granted needed permissions by default.
 
+v0.11     Fixed FC on some ROM, Added super resolution, tele and night and parallel process options (to be tested)
+
 ## Instructions
 Install module and reboot;
 
