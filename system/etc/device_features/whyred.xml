@@ -198,12 +198,12 @@
     <!--whether support square mode in camera-->
     <bool name="support_camera_square_mode">true</bool>
     <!--whether support camera video high frame-->
-    <bool name="support_camera_video_high_frame">true</bool>
+    <bool name="support_camera_video_high_frame">false</bool>
     <!--whether support camera super resolution-->
-    <bool name="support_super_resolution">true</bool>
+    <bool name="support_super_resolution">false</bool>
     <!--whether support tele asd night in camera-->
-    <bool name="is_support_tele_asd_night">true</bool>
-    <!-- whether camera supports paralell process -->
+    <bool name="is_support_tele_asd_night">false</bool>
+    <!-- whether camera supports parallel process -->
     <bool name="support_parallel_process">true</bool>
     <!-- whether this device is Android one -->
     <bool name="is_android_one_device">true</bool>
