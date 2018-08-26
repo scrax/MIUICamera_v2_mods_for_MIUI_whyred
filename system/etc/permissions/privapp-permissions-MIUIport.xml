@@ -29,11 +29,8 @@ applications that come with the platform
         <!-- Microphone -->
         <permission name="android.permission.RECORD_AUDIO"/>
         <!-- Storage -->
-        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
-        <permission name="android.permission.READ_MEDIA_STORAGE"/>
         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
-        <!--permission name="android.permission.INTERACT_ACROSS_USERS"/-->
-        <!--permission name="android.permission.WRITE_SECURE_SETTINGS"/-->
+        <!-- Telephone -->
+        <!--permission name="android.permission.READ_PHONE_STATE"--/>
     </privapp-permissions>
 </permissions>
