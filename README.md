@@ -71,6 +71,7 @@ v0.10     Granted needed permissions by default.
 
 v0.11     Fixed FC on some ROM, Added super resolution, tele and night and parallel process options (to be tested). Temporary restored AI feature (just to test if works or not)
 
+v0.12     Removed tick sound and other small fixes
 
 ## Instructions
 Install module and reboot;
