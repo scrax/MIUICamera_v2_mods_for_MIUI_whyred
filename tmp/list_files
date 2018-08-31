@@ -1,14 +1,8 @@
-#!/sbin/sh
-# 
-# /system/addon.d/99-dirty.sh
-# /system is formatted and reinstalled, then thes files are restored.
-#
-
-. /tmp/backuptool.functions
-
-list_files() {
-cat <<EOF
 addon.d/99-MIUICamV2.sh
+addon.d/audio_fix
+addon.d/list_files
+addon.d/vendor_build_prop_tweaks
+addon.d/vendor_build_prop_tweaks.sh
 etc/device_features/whyred.xml
 etc/media_profiles.xml
 etc/permissions/android.hardware.camera.full.xml
@@ -196,33 +190,3 @@ vendor/lib/hw/audio.primary.sdm660.so
 vendor/lib64/hw/audio.primary.sdm660.so
 vendor/usr/keylayout/uinput-fpc.kl
 vendor/usr/keylayout/uinput-goodix.kl
-EOF
-#cat list_files
-}
-
-case "$1" in
-  backup)
-    list_files | while read FILE DUMMY; do
-      backup_file $S/"$FILE"
-    done
-  ;;
-  restore)
-    list_files | while read FILE REPLACEMENT; do
-      R=""
-      [ -n "$REPLACEMENT" ] && R="$S/$REPLACEMENT"
-      [ -f "$C/$S/$FILE" ] && restore_file $S/"$FILE" "$R"
-    done
-		;;
-  pre-backup)
-    # Stub
-  ;;
-  post-backup)
-    # Stub
-  ;;
-  pre-restore)
-    # Stub
-  ;;
-  post-restore)
-    bash vendor_build_prop_tweaks.sh
-  ;;
-esac
