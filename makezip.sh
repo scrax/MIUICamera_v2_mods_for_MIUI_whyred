@@ -2,12 +2,25 @@
 
 name=MIUICamera_v2_whyred
 ver=$(cat module.prop | grep version= | cut -b 10-13)
+lf=tmp/list_files
 
 echo ' '
 echo make ZIP: TWRP-$name-$ver\_$1.zip
 echo '---------'
+find . -name '*.DS_Store' -type f -delete
+echo 'system/addon.d/99-MIUICamV2.sh' > $lf
+echo 'system/addon.d/audio_fix' >> $lf
+echo 'system/addon.d/list_files' >> $lf
+echo 'system/addon.d/vendor_build_prop_tweaks' >> $lf
+echo 'system/addon.d/vendor_build_prop_tweaks.sh' >> $lf
+find system/* -type f >> $lf
 cp make/twrp META-INF/com/google/android/updater-script
 zip -r -X TWRP-$name-$ver\_$1.zip mount META-INF system tmp
+mv system systemp
+mv sysmiui system
+zip -r -X MIUI-TWRP-$name-$ver\_$1.zip mount META-INF system tmp
+mv system sysmiui
+mv systemp system
 echo '---------'
 echo FINISHED!
 echo ' '
@@ -17,6 +30,11 @@ echo make ZIP: MAGISK-$name-$ver\_$1.zip
 echo '---------'
 cp make/magisk META-INF/com/google/android/updater-script
 zip -r -X MAGISK-$name-$ver\_$1.zip common META-INF system config.sh module.prop README.md
+mv system systemp
+mv sysmiui system
+zip -r -X MIUI-MAGISK-$name-$ver\_$1.zip common META-INF system config.sh module.prop README.md
+mv system sysmiui
+mv systemp system
 echo '---------'
 echo FINISHED!
 echo ' '

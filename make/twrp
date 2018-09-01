@@ -25,6 +25,7 @@ set_perm(0, 0, 0755, "/system/addon.d/99-MIUICameraV2.sh");
 set_perm(0, 0, 0777, "/system/addon.d/vendor_build_prop_tweaks.sh");
 set_perm(0, 0, 0777, "/system/addon.d/vendor_build_prop_tweaks");
 set_perm(0, 0, 0777, "/system/addon.d/audio_fix");
+set_perm(0, 0, 0777, "/system/addon.d/list_files");
 ui_print("");
 run_program("/system/addon.d/vendor_build_prop_tweaks.sh", "vendor_build_prop_tweaks");
 ui_print(" ");
