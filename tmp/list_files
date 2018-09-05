@@ -5,6 +5,10 @@ system/addon.d/vendor_build_prop_tweaks
 system/addon.d/vendor_build_prop_tweaks.sh
 system/etc/device_features/whyred.xml
 system/etc/media_profiles.xml
+system/media/audio/ui/camera_click.ogg
+system/media/audio/ui/camera_focus.ogg
+system/media/audio/ui/VideoRecord.ogg
+system/media/audio/ui/VideoStop.ogg
 system/priv-app/MiuiCamera/lib/arm64/com.qualcomm.qti.imscmservice@1.0.so
 system/priv-app/MiuiCamera/lib/arm64/com.qualcomm.qti.imscmservice@1.1.so
 system/priv-app/MiuiCamera/lib/arm64/lib-imscamera.so
@@ -177,6 +181,9 @@ system/vendor/etc/permissions/android.hardware.camera.raw.xml
 system/vendor/etc/permissions/privapp-permissions-MIUIport.xml
 system/vendor/etc/scve/facereco/gModel.dat
 system/vendor/lib/hw/audio.primary.sdm660.so
+system/vendor/lib/libchromatix_ov13855_cpp_ds_chromatix.so
+system/vendor/lib/libchromatix_ov13855_cpp_us_chromatix.so
+system/vendor/lib/libchromatix_ov13855_zsl_preview_bu64297.so
 system/vendor/lib64/hw/audio.primary.sdm660.so
 system/vendor/usr/keylayout/uinput-fpc.kl
 system/vendor/usr/keylayout/uinput-goodix.kl
