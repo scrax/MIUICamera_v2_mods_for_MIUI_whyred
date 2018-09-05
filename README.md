@@ -9,8 +9,6 @@ No conflicts with gcam and camera2 API.
 
 No editing of build.prop by the module (conflicts free)
 
-~~Needs permissions enabled manually.~~
-
 ## Functions
 PHOTO
 
@@ -34,7 +32,6 @@ PHOTO
 - Age & gender and magic mirror modes (front camera)
 - Increased burst shoot (100 pics)
 - Fingerprint shutter enabled by default (system wide)
-- Camera sound toggle
 
 VIDEO
 
@@ -46,6 +43,7 @@ VIDEO
 AUDIO
 
 - Audio recording fix (by @rocker00)
+- Camera sound toggle fix
 
 ## Changelog
 
@@ -75,10 +73,10 @@ v0.12     Removed tick sound and other small fixes
 
 v0.13     Cleanup, new camera sound fix and first version for Oreo Pie and MIUI
 
+v0.14     Better lowlight shot, magisk module updated.
+
 ## Instructions
 Install module and reboot;
-
-~~Before starting camera app, manually enable permissions.~~
 
 **camera2 API is not required**
 
