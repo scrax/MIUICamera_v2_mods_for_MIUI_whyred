@@ -198,7 +198,7 @@
     <!--whether support square mode in camera-->
     <bool name="support_camera_square_mode">true</bool>
     <!--whether support camera video high frame-->
-    <bool name="support_camera_video_high_frame">false</bool>
+    <bool name="support_camera_video_high_frame">true</bool>
     <!--whether support camera super resolution-->
     <bool name="support_super_resolution">false</bool>
     <!--whether support tele asd night in camera-->
