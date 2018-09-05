@@ -19,6 +19,8 @@ cp make/twrp/update-binary META-INF/com/google/android/update-binary
 zip -r -X TWRP-$name-$ver\_$1.zip mount META-INF system tmp
 echo make ZIP: MIUI-TWRP-$name-$ver\_$1.zip 
 echo '---------'
+rm - f sysmiui/etc/device_features/whyred.xml
+cp system/etc/device_features/whyred.xml sysmiui/etc/device_features/whyred.xml 	
 mv system systemp
 mv sysmiui system
 zip -r -X MIUI-TWRP-$name-$ver\_$1.zip mount META-INF system tmp
