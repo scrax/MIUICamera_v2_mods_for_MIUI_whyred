@@ -90,6 +90,7 @@ LensInfo : Information of the lens present in the module.
   <CameraModuleConfig>
     <CameraId>0</CameraId>
     <SensorName>whyred_s5k5e8_ofilm_i</SensorName>
+    <SensorAlias>whyred_s5k5e8_ofilm_i</SensorAlias>
     <EepromName>whyred_s5k5e8_ofilm_i</EepromName>
     <ChromatixName_china>whyred_s5k5e8_ofilm_cn_i_chromatix</ChromatixName_china>
     <ChromatixName>whyred_s5k5e8_ofilm_global_i_chromatix</ChromatixName>
@@ -98,17 +99,20 @@ LensInfo : Information of the lens present in the module.
     <MountAngle>90</MountAngle>
     <CSIInfo>
       <CSIDCore>1</CSIDCore>
-      <LaneMask>0x7</LaneMask>
+      <LaneMask>0x1F</LaneMask>
       <LaneAssign>0x4320</LaneAssign>
       <ComboMode>0</ComboMode>
     </CSIInfo>
     <LensInfo>
       <FocalLength>1.97</FocalLength>
       <FNumber>2.0</FNumber>
-      <TotalFocusDistance>1.9</TotalFocusDistance>
-      <HorizontalViewAngle>84.0</HorizontalViewAngle>
-      <VerticalViewAngle>63.0</VerticalViewAngle>
-      <MinFocusDistance>0.1</MinFocusDistance>
+      <TotalFocusDistance>0.15</TotalFocusDistance>
+      <HorizontalViewAngle>84.9</HorizontalViewAngle>
+      <VerticalViewAngle>84.9</VerticalViewAngle>
+      <MinFocusDistance>0.15</MinFocusDistance>
+      <MaxRollDegree>1.0</MaxRollDegree>
+      <MaxPitchDegree>1.0</MaxPitchDegree>
+      <MaxYawDegree>1.0</MaxYawDegree>
     </LensInfo>
   </CameraModuleConfig>
   <CameraModuleConfig>
@@ -204,10 +208,13 @@ LensInfo : Information of the lens present in the module.
     <LensInfo>
       <FocalLength>3.94</FocalLength>
       <FNumber>1.9</FNumber>
-      <TotalFocusDistance>2.91</TotalFocusDistance>
+      <TotalFocusDistance>2.918</TotalFocusDistance>
       <HorizontalViewAngle>70.4</HorizontalViewAngle>
       <VerticalViewAngle>55.7</VerticalViewAngle>
       <MinFocusDistance>0.1</MinFocusDistance>
+      <MaxRollDegree>1.0</MaxRollDegree>
+      <MaxPitchDegree>1.0</MaxPitchDegree>
+      <MaxYawDegree>1.0</MaxYawDegree>
     </LensInfo>
   </CameraModuleConfig>
   <CameraModuleConfig>
@@ -286,6 +293,7 @@ LensInfo : Information of the lens present in the module.
   <CameraModuleConfig>
     <CameraId>2</CameraId>
     <SensorName>whyred_ov13855_sunny_cn_i</SensorName>
+    <SensorAlias>whyred_ov13855_sunny_cn_i</SensorAlias>
     <ChromatixName>whyred_ov13855_sunny_cn_i_chromatix</ChromatixName>
     <EepromName>whyred_ov13855_sunny_cn_i</EepromName>
     <FlashName>pmic</FlashName>
