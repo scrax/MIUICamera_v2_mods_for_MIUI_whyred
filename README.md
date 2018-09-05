@@ -3,7 +3,8 @@
 ## Description
 This module brings MIUI Camera v2 (from Mi A2) to aosp and Los based ROM on whyred.
 
-Tested on LineageOS 15.1 (microG version) android Oreo. ~~**Don't works on MIUI based ROM**.~~
+Tested on LineageOS 15.1 (microG version) android Oreo.
+Confirmed working on other AOSP rom and Pie.
 
 No conflicts with gcam and camera2 API.
 
@@ -43,7 +44,7 @@ VIDEO
 AUDIO
 
 - Audio recording fix (by @rocker00)
-- Camera sound toggle fix
+- AOSP camera sound toggle fix
 
 ## Changelog
 
@@ -71,9 +72,11 @@ v0.11     Fixed FC on some ROM, Added super resolution, tele and night and paral
 
 v0.12     Removed tick sound and other small fixes
 
-v0.13     Cleanup, new camera sound fix and first version for Oreo Pie and MIUI
+v0.13     Cleanup, new camera sound fix and first versions for Pie and MIUI
 
 v0.14     Better lowlight shot, magisk module updated.
+
+v0.15     Revert camera sound toggle fix.
 
 ## Instructions
 Install module and reboot;
@@ -92,6 +95,8 @@ slow-mo fix by @Dyneteve
 
 sound fix by @lawong
 
-audio recording fix by @rocker00
+audio recording improved by @rocker00
 
 video recording improvements by @carlosggb and @ARNOB XENON
+
+Pie fix by @jhenrique09
