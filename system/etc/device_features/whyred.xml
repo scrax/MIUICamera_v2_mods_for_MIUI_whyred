@@ -343,6 +343,8 @@
     <bool name="support_parallel_process">true</bool>
     <!--whether support pause in hfr recording-->
     <bool name="support_hfr_video_pause">true</bool>
+    <!--whether camera support 3D face beauty-->
+    <bool name="support_3d_face_beauty">true</bool>
     <!-- whether this device is Android one -->
     <!--bool name="is_android_one_device">true</bool-->
 </features>
