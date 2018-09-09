@@ -24,8 +24,8 @@
     <bool name="btdebug_enabled">true</bool>
     <!--whether the device supports page layout-->
     <bool name="support_page_layout">false</bool>
-    <!--whether the device supports record param-->
-    <bool name="support_record_param">false</bool>
+    <!--whether the device supports record param CHANGED-->
+    <bool name="support_record_param">true</bool>
     <!--whether the device supports interview record param-->
     <bool name="support_interview_record_param">true</bool>
     <!--whether the device supports stereo record-->
@@ -126,14 +126,14 @@
     <bool name="is_lower_size_effect">false</bool>
     <!-- support nfc -->
     <bool name="support_nfc">false</bool>
-    <!--whether support aohdr in camera-->
-    <bool name="support_camera_aohdr">false</bool>
+    <!--whether support aohdr in camera CHANGED-->
+    <bool name="support_camera_aohdr">true</bool>
     <!--whether support high frame recording in camera-->
     <bool name="support_camera_hfr">true</bool>
     <!--whether support chroma flash in camera-->
     <bool name="support_chroma_flash">false</bool>
-    <!--whether support object tracking in camera-->
-    <bool name="support_object_track">false</bool>
+    <!--whether support object tracking in camera CHANGED-->
+    <bool name="support_object_track">true</bool>
     <!--whether support 4k recording in camera CHANGED-->
     <bool name="support_camera_4k_quality">true</bool>
     <!--whether support audio focus recording in camera-->
@@ -343,6 +343,8 @@
     <bool name="support_parallel_process">true</bool>
     <!--whether support pause in hfr recording-->
     <bool name="support_hfr_video_pause">true</bool>
+    <!--whether camera support 3D face beauty-->
+    <bool name="support_3d_face_beauty">true</bool>
     <!-- whether this device is Android one -->
     <!--bool name="is_android_one_device">true</bool-->
 </features>
