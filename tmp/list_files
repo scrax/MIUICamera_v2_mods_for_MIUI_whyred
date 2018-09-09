@@ -217,9 +217,6 @@ system/vendor/firmware/cpp_firmware_v1_5_2.fw
 system/vendor/firmware/cpp_firmware_v1_6_0.fw
 system/vendor/firmware/cpp_firmware_v1_8_0.fw
 system/vendor/lib/hw/audio.primary.sdm660.so
-system/vendor/lib/libchromatix_ov13855_cpp_ds_chromatix.so
-system/vendor/lib/libchromatix_ov13855_cpp_us_chromatix.so
-system/vendor/lib/libchromatix_ov13855_zsl_preview_bu64297.so
 system/vendor/lib64/hw/audio.primary.sdm660.so
 system/vendor/usr/keylayout/uinput-fpc.kl
 system/vendor/usr/keylayout/uinput-goodix.kl

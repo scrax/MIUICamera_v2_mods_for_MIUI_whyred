@@ -25,7 +25,7 @@ PHOTO
 - HHT
 - Straighten
 - Tilt-shift
-- Group Selfie (works good only when phone is horizontal)
+- Group Selfie
 - Beautify and Beautify pro (v2)
 - Timer (3s and 5s)
 - HDR (on, off, auto), HDR pro (default) and live HDR
@@ -77,6 +77,8 @@ v0.13     Cleanup, new camera sound fix and first versions for Pie and MIUI
 v0.14     Better lowlight shot, magisk module updated.
 
 v0.15     Revert camera sound toggle fix.
+
+v0.16     Removed better lowlight shot causinf system FC, fixed group selfie
 
 ## Instructions
 Install module and reboot;
