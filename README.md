@@ -80,8 +80,12 @@ v0.15     Revert camera sound toggle fix.
 
 v0.16     Removed better lowlight shot causing system FC
 
+v0.17     Added more libs, removed age&gender, obj. tracking and magic mirror from AOSP cause partially or not working; enabled asd night.
+
 ## Instructions
-Install module and reboot;
+
+Install module in magisk or TWRP (on your choice) and reboot;
+For TWRP installer make a backup of system and vendor in TWRP to unistall.
 
 **camera2 API is not required**
 
