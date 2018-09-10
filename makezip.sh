@@ -6,7 +6,6 @@ lf=tmp/list_files
 target='sysmiui/etc/device_features/whyred.xml'
 temp='temp.xml'
 
-
 echo 'TWRP BUILD'
 
 echo 'prepare addon.d files'
@@ -23,7 +22,7 @@ cp make/twrp/updater-script META-INF/com/google/android/updater-script
 cp make/twrp/update-binary META-INF/com/google/android/update-binary
 
 echo make ZIP: AOSP-TWRP-$name-$ver\_$1.zip
-zip -r -X -q AOSP-TWRP-$name-$ver\_$1.zip mount META-INF system tmp >/dev/null 2>&1
+#zip -r -X -q AOSP-TWRP-$name-$ver\_$1.zip mount META-INF system tmp >/dev/null 2>&1
 
 echo 'make MIUI whyred.xml'
 #fix whyred.xml for miui
@@ -42,7 +41,7 @@ mv system systemp
 mv sysmiui system
 
 echo make ZIP: MIUI-TWRP-$name-$ver\_$1.zip
-zip -r -X -q MIUI-TWRP-$name-$ver\_$1.zip mount META-INF system tmp
+#zip -r -X -q MIUI-TWRP-$name-$ver\_$1.zip mount META-INF system tmp
 mv system sysmiui
 mv systemp system
 echo ' '
@@ -55,15 +54,18 @@ cp make/magisk/updater-script META-INF/com/google/android/updater-script
 cp make/magisk/update-binary META-INF/com/google/android/update-binary
 
 echo make ZIP: AOSP-MAGISK-$name-$ver\_$1.zip
-zip -r -X -q AOSP-MAGISK-$name-$ver\_$1.zip common META-INF system config.sh module.prop README.md
+#zip -r -X -q AOSP-MAGISK-$name-$ver\_$1.zip common META-INF system config.sh module.prop README.md
 
 echo 'make MIUI whyred.xml'
 #fix whyred.xml for miui
 rm -f sysmiui/etc/device_features/whyred.xml
 cp system/etc/device_features/whyred.xml sysmiui/etc/device_features/whyred.xml
 sed '
+s/camera_age_detection">false/camera_age_detection">true/
+s/_object_track">false/_object_track">true/
 s/camera_quick_snap">false/camera_quick_snap">true/
-s/front_fingerprint_sensor">true/front_fingerprint_sensor">false/' <$target >$temp
+s/front_fingerprint_sensor">true/front_fingerprint_sensor">false/
+s/camera_magic_mirror">false/camera_magic_mirror">true/' <$target >$temp
 mv $temp $target
 echo 'make MIUI system'
 # change system with sysmiui 	
@@ -71,7 +73,7 @@ mv system systemp
 mv sysmiui system
 
 echo make ZIP: MIUI-MAGISK-$name-$ver\_$1.zip
-zip -r -X -q MIUI-MAGISK-$name-$ver\_$1.zip common META-INF system config.sh module.prop README.md
+#zip -r -X -q MIUI-MAGISK-$name-$ver\_$1.zip common META-INF system config.sh module.prop README.md
 mv system sysmiui
 mv systemp system
 echo '---------'

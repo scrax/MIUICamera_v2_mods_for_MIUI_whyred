@@ -78,7 +78,7 @@ v0.14     Better lowlight shot, magisk module updated.
 
 v0.15     Revert camera sound toggle fix.
 
-v0.16     Removed better lowlight shot causinf system FC, fixed group selfie
+v0.16     Removed better lowlight shot causing system FC
 
 ## Instructions
 Install module and reboot;
