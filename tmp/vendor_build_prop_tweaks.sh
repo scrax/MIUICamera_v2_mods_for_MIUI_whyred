@@ -1,11 +1,20 @@
 #!/sbin/sh
 
 bp="/vendor/build.prop"
+dir="/system/media/audio/ui/"
+prop=ro.vendor.audio.sdk.fluencetype=none
+
+audio_fix() {
+cat <<EOF
+camera_click.ogg
+camera_focus.ogg
+VideoRecord.ogg
+VideoStop.ogg
+EOF
+}
 
 busybox mount /vendor
 busybox mount /data
-
-
 
 if [ -f /vendor/build.prop.bak ]; 
   then
@@ -15,29 +24,28 @@ if [ -f /vendor/build.prop.bak ];
     cp $bp $bp.bak
 fi
 
-
 echo " " >> $bp
 
-for mod in vendor_build_prop_tweaks;
-  do
+#for mod in vendor_build_prop_tweaks;
+#  do
 
-    for prop in `cat /tmp/$mod`;do
+#    for prop in `cat /tmp/$mod`;do
       export newprop=$(echo ${prop} | cut -d '=' -f1)
       sed -i "/${newprop}/d" /vendor/build.prop
       echo $prop >> /vendor/build.prop
-    done
-done
-
-#echo 'Starting camera sound fix'
-#dir="/system/media/audio/ui/";
-#for name in audio_fix;
-#  do
-#    if [ -f $dir$name.bak ];
-#      then
-#        echo 'Camera sound already fixed'
-#        # mv $dir$name.bak $dir$name
-#      else
-#        echo 'Fixing camera sound'
-#        mv $dir$name $dir$name.bak
-#    fi
+#    done
 #done
+
+echo 'Starting camera sound fix'
+
+audio_fix | while read name ;
+  do
+    if [ -f $dir$name.bak ];
+      then
+        echo Camera sound: "$name" already fixed
+        #mv $dir$name.bak $dir$name
+      else
+        echo Fixing camera sound: "$name"
+        mv $dir$name $dir$name.bak
+    fi
+done

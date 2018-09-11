@@ -10,24 +10,30 @@ run_program("/sbin/busybox", "unzip", "/tmp/mount/mount.zip", "META-INF/com/goog
 run_program("/sbin/sh", "/tmp/mount/META-INF/com/google/android/update-binary", "dummy", "1", "/tmp/mount/mount.zip");
 ui_print("  Injecting MIUICamera v2 Files...  ");
 ui_print(" ");
-show_progress(8.800000, 5);
 package_extract_dir("system", "/system");
 
 ui_print("       Setting permissions...       ");
 ui_print(" ");
 set_perm_recursive(0, 0, 0755, 0644, "/system/etc");
 set_perm_recursive(0, 0, 0755, 0644, "/system/media");
+set_perm_recursive(0, 0, 0755, 0644, "/system/framework");
+set_perm_recursive(0, 0, 0755, 0644, "/system/lib64");
 set_perm_recursive(0, 0, 0755, 0644, "/system/priv-app");
 set_perm_recursive(0, 0, 0755, 0644, "/system/vendor");
 
-ui_print("  Set vendor prop for audio fix...  ");
-package_extract_dir("tmp", "/system/addon.d");
-set_perm(0, 0, 0755, "/system/addon.d/99-MIUICameraV2.sh");
-set_perm(0, 0, 0777, "/system/addon.d/vendor_build_prop_tweaks.sh");
-set_perm(0, 0, 0777, "/system/addon.d/vendor_build_prop_tweaks");
-set_perm(0, 0, 0777, "/system/addon.d/audio_fix");
-ui_print("");
-run_program("/system/addon.d/vendor_build_prop_tweaks.sh", "vendor_build_prop_tweaks");
+ui_print("        Enable camera2 api...       ");
 ui_print(" ");
-ui_print("          Reboot & Enjoy           ");
+package_extract_file("tmp/api.sh", "/tmp/api.sh");
+set_perm(0, 0, 0755, "/tmp/api.sh");
+run_program("/sbin/busybox", "sh", "/tmp/api.sh");
+
+ui_print("  Set vendor prop for audio fix...  ");
+ui_print(" ");
+package_extract_file("tmp/99-MIUICamV2.sh", "/system/addon.d/99-MIUICamV2.sh");
+set_perm(0, 0, 0755, "/system/addon.d/99-MIUICamV2.sh");
+package_extract_file("tmp/vendor_build_prop_tweaks.sh", "/system/addon.d/vendor_build_prop_tweaks.sh");
+set_perm(0, 0, 0755, "/system/addon.d/vendor_build_prop_tweaks.sh");
+run_program("/sbin/busybox", "sh", "/system/addon.d/vendor_build_prop_tweaks.sh");
+ui_print(" ");
+ui_print("          Reboot & Enjoy            ");
 ui_print(" ");
