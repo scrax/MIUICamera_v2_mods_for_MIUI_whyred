@@ -169,6 +169,7 @@ system/vendor/etc/camera/csidtg_chromatix.xml
 system/vendor/etc/camera/dualcamera.png
 system/vendor/etc/camera/dualcamera.png.bak
 system/vendor/etc/camera/dualcamera_in.png
+system/vendor/etc/camera/dualcamera_in.png.bak
 system/vendor/etc/camera/face_goodly_208_180
 system/vendor/etc/camera/face_ravishing_238_224
 system/vendor/etc/camera/face_splendid_274_200
