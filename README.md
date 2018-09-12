@@ -80,7 +80,7 @@ v0.15     Revert camera sound toggle fix.
 
 v0.16     Removed better lowlight shot causing system FC
 
-v0.17     Added more libs, HEVC codec, removed age&gender, obj. tracking and magic mirror from AOSP cause partially or not working; enabled asd night.
+v0.17     Added more libs, HEVC codec, removed age&gender, obj. tracking and magic mirror from AOSP cause partially or not working; enabled asd night. Edited watermark.
 
 ## Instructions
 
