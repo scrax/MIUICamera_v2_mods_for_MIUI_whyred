@@ -105,7 +105,7 @@
     </EncoderProfile>
 
     <EncoderProfile quality="high" fileFormat="mp4" duration="30">
-      <Video codec="hevc"
+      <Video codec="h264"
              bitRate="35000000"
              width="3840"
              height="2160"
@@ -144,7 +144,7 @@
     </EncoderProfile>
 
     <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
-      <Video codec="hevc"
+      <Video codec="h264"
              bitRate="8000000"
              width="720"
              height="480"
@@ -157,7 +157,7 @@
     </EncoderProfile>
 
     <EncoderProfile quality="720p" fileFormat="mp4" duration="30">
-      <Video codec="hevc"
+      <Video codec="h264"
              bitRate="15000000"
              width="1280"
              height="720"
@@ -170,7 +170,7 @@
     </EncoderProfile>
 
     <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
-      <Video codec="hevc"
+      <Video codec="h264"
              bitRate="25000000"
              width="1920"
              height="1080"
@@ -183,7 +183,7 @@
     </EncoderProfile>
 
     <EncoderProfile quality="qhd" fileFormat="mp4" duration="30">
-      <Video codec="hevc"
+      <Video codec="h264"
              bitRate="27000000"
              width="2560"
              height="1440"
@@ -196,7 +196,7 @@
     </EncoderProfile>
 
     <EncoderProfile quality="2k" fileFormat="mp4" duration="30">
-      <Video codec="hevc"
+      <Video codec="h264"
              bitRate="26000000"
              width="2048"
              height="1080"
@@ -209,7 +209,7 @@
     </EncoderProfile>
 
     <EncoderProfile quality="4kdci" fileFormat="mp4" duration="30">
-      <Video codec="hevc"
+      <Video codec="h264"
             bitRate="36000000"
             width="4096"
             height="2160"
@@ -222,7 +222,7 @@
     </EncoderProfile>
 
     <EncoderProfile quality="2160p" fileFormat="mp4" duration="30">
-      <Video codec="hevc"
+      <Video codec="h264"
             bitRate="35000000"
             width="3840"
             height="2160"
@@ -443,7 +443,7 @@
 
    <!-- CAMCORDER_QUALITY_HIGH_SPEED_LOW/720P : 720p@240fps; 42.0 Mbps -->
    <EncoderProfile quality="highspeedlow" fileFormat="mp4" duration="30">
-        <Video codec="hevc"
+        <Video codec="h264"
                bitRate="42000000"
                width="1280"
                height="720"
@@ -457,7 +457,7 @@
 
    <!-- CAMCORDER_QUALITY_HIGH_SPEED_HIGH/1080P : 1080p@120fps; 42.0 Mbps -->
    <EncoderProfile quality="highspeedhigh" fileFormat="mp4" duration="30">
-       <Video codec="hevc"
+       <Video codec="h264"
               bitRate="42000000"
               width="1920"
               height="1080"
@@ -470,7 +470,7 @@
    </EncoderProfile>
 
    <EncoderProfile quality="highspeed720p" fileFormat="mp4" duration="30">
-       <Video codec="hevc"
+       <Video codec="h264"
               bitRate="38000000"
               width="1280"
               height="720"
@@ -483,7 +483,7 @@
     </EncoderProfile>
 
    <EncoderProfile quality="highspeed1080p" fileFormat="mp4" duration="30">
-       <Video codec="hevc"
+       <Video codec="h264"
               bitRate="42000000"
               width="1920"
               height="1080"
