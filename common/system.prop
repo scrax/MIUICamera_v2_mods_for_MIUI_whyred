@@ -1,3 +1,6 @@
+#!/system/bin/sh
+MODDIR=${0%/*}
+
 #Name
 ro.product.model=Redmi Note 5
 ro.product.brand=Xiaomi

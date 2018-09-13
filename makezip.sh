@@ -1,29 +1,36 @@
 #!/bin/sh
 
-name=MIUICamera_v2_whyred
-ver=$(sed -n -e 's/version=v// ' -e 's/ ([0-9-]*)// p' <module.prop )
-lf=tmp/98-MIUICamV2.sh
-target='sysmiui/etc/device_features/whyred.xml'
-temp='temp.xml'
-syst=''
-os='AOSP'
+init(){
+	name=$(sed -n -e 's/id=// p' <module.prop )
+	ver=$(sed -n -e 's/version=v// ' -e 's/ ([0-9-]*)// p' <module.prop )
+	addond=tmp/98-MIUICamV2.sh
+	target='sysmiui/etc/device_features/whyred.xml'
+	temp='temp.xml'
+	syst=''
+	os='AOSP'
 
-prep_miui() {
+	echo 'START '$name'-'$1' build...'
+	#echo '*                 Remove media                 *'
+	[ -d system/media ] && rm -Rf system/media ;
+	[ -d sysmiui ] && rm -Rf sysmiui ;
+	[ -f $addond ] && rm -Rf $addond ;
+}
+
+set_miui() {
 	if [ -d systemp ];
 	  then
 		os=AOSP
 		echo '*----------------------------------------------*'
-		echo '*                                              *'
-		echo '*   '$os'   Prepare AOSP system                 *'
+		echo '*          Prepare AOSP system                 *'
+		echo '*   '$os'   Restore system                      *'
 		#mv system sysmiui
 		#rm -R sysmiui
-		rm -R system
+		rm -Rf system
 		mv systemp system 
 	  else
 		os=MIUI
 		echo '*----------------------------------------------*'
 		echo '*          Prepare MIUI system                 *'
-		# change system with sysmiui 	
 		mkdir sysmiui
 		mkdir sysmiui/etc
 		mkdir sysmiui/etc/device_features
@@ -52,6 +59,7 @@ prep_miui() {
 		cp make/miui/lib/libchromatix_ov13855_zsl_preview_bu64297.so sysmiui/vendor/lib/libchromatix_ov13855_zsl_preview_bu64297.so
 
 		echo '*   '$os'   Edit whyred.xml for MIUI            *'
+		
 		#fix whyred.xml for miui
 		cp system/etc/device_features/whyred.xml $target
 		sed '
@@ -67,6 +75,7 @@ prep_miui() {
 		s/android_one_device">true/android_one_device">false/' <$target >$temp
 		mv $temp $target
 		
+		# change system with sysmiui 	
 		mv system systemp
 		mv sysmiui system
 	fi
@@ -79,14 +88,11 @@ prep_twrp() {
 	echo '************************************************'
 	syst=TWRP
 	
-	#echo '*                 Remove media                 *'
-	rm -rf system/media
-	
 	echo '*          Prepare addon.d files               *'
-	cat make/twrp/restorstart > $lf
+	cat make/twrp/restorstart > $addond
 	find . -name '*.DS_Store' -type f -delete
-	find system/* -type f >> $lf
-	cat make/twrp/restorend >>$lf
+	find system/* -type f >> $addond
+	cat make/twrp/restorend >>$addond
 	
 	echo '*   '$os'   Set TWRP installer META-INF         *'
 	cp make/twrp/updater-script META-INF/com/google/android/updater-script
@@ -120,14 +126,16 @@ make_one(){
 
 make_two(){
 	make_one $1
-	prep_miui
+	set_miui
 	make_one $1
 	echo '************************************************'
+	[ ! -d systemp ] && echo '                                    ...FINISHED!' ;
 }
 
-echo 'START '$name'-'$1' build...'
+init
 prep_twrp
 make_two $1
+
 prep_magisk
 make_two $1
-echo '                                    ...FINISHED!'
+

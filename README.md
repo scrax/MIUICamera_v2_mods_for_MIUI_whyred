@@ -23,7 +23,7 @@ PHOTO
 - HHT
 - Straighten
 - Tilt-shift
-- Group Selfie
+- Group Selfie (works good only when phone is horizontal)
 - Beautify and Beautify pro (v2)
 - Timer (3s and 5s)
 - HDR (on, off, auto), HDR pro (default) and live HDR

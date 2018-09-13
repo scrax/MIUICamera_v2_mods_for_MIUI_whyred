@@ -40,8 +40,6 @@ system/framework/oat/arm64/zxing.odex
 system/framework/oat/arm64/zxing.vdex
 system/framework/volley.jar
 system/framework/zxing.jar
-system/lib64/libgnustl_shared.so
-system/lib64/libSNPE.so
 system/priv-app/MiuiCamera/lib/arm64/com.qualcomm.qti.imscmservice@1.0.so
 system/priv-app/MiuiCamera/lib/arm64/com.qualcomm.qti.imscmservice@1.1.so
 system/priv-app/MiuiCamera/lib/arm64/lib-imscamera.so
@@ -59,6 +57,7 @@ system/priv-app/MiuiCamera/lib/arm64/libdualcameraddm.so
 system/priv-app/MiuiCamera/lib/arm64/libfilterfw.so
 system/priv-app/MiuiCamera/lib/arm64/libfiltergenerator.so
 system/priv-app/MiuiCamera/lib/arm64/libfilterpack_imageproc.so
+system/priv-app/MiuiCamera/lib/arm64/libgnustl_shared.so
 system/priv-app/MiuiCamera/lib/arm64/libhazebuster.so
 system/priv-app/MiuiCamera/lib/arm64/libimscamera_jni.so
 system/priv-app/MiuiCamera/lib/arm64/libimsmedia_jni.so
@@ -102,6 +101,7 @@ system/priv-app/MiuiCamera/lib/arm64/libscveObjectTracker_stub.so
 system/priv-app/MiuiCamera/lib/arm64/libscvePanorama.so
 system/priv-app/MiuiCamera/lib/arm64/libscvePanorama_lite.so
 system/priv-app/MiuiCamera/lib/arm64/libseestraight.so
+system/priv-app/MiuiCamera/lib/arm64/libSNPE.so
 system/priv-app/MiuiCamera/lib/arm64/libtrueportrait.so
 system/priv-app/MiuiCamera/lib/arm64/libtruescanner.so
 system/priv-app/MiuiCamera/lib/arm64/libts_detected_face_jni.so
@@ -119,6 +119,8 @@ system/priv-app/MiuiCamera/lib/arm64/vendor.qti.hardware.camera.device@1.0.so
 system/priv-app/MiuiCamera/MiuiCamera.apk
 system/priv-app/MiuiCamera/oat/arm64/MiuiCamera.odex
 system/priv-app/MiuiCamera/oat/arm64/MiuiCamera.vdex
+system/usr/keylayout/uinput-fpc.kl
+system/usr/keylayout/uinput-goodix.kl
 system/vendor/etc/acdbdata/adsp_avs_config.acdb
 system/vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 system/vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
@@ -349,8 +351,6 @@ system/vendor/lib/libubifocus.so
 system/vendor/lib/libVDClearShot.so
 system/vendor/lib/libVDSuperPhotoAPI.so
 system/vendor/lib64/hw/audio.primary.sdm660.so
-system/vendor/usr/keylayout/uinput-fpc.kl
-system/vendor/usr/keylayout/uinput-goodix.kl
 EOF
 }
 
