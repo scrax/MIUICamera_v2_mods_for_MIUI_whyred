@@ -10,10 +10,38 @@ os=''
 
 prep_miui() {
 	os=MIUI
+	echo 'make MIUI system'
+	# change system with sysmiui 	
+	mkdir sysmiui
+	mkdir sysmiui/etc
+	mkdir sysmiui/etc/device_features
+	mkdir sysmiui/lib64
+	mkdir sysmiui/vendor
+	mkdir sysmiui/vendor/etc
+	mkdir sysmiui/vendor/etc/camera
+	mkdir sysmiui/vendor/lib
+
+	cp system/etc/media_profiles.xml sysmiui/etc/media_profiles.xml
+	cp system/priv-app/MiuiCamera/lib/arm64/libmorpho_group_portrait.so sysmiui/lib64/libmorpho_group_portrait.so
+	cp system/priv-app/MiuiCamera/lib/arm64/libmorpho_groupshot.so sysmiui/lib64/libmorpho_groupshot.so
+	cp system/vendor/etc/audio_platform_info.xml sysmiui/vendor/etc/audio_platform_info.xml
+	cp system/vendor/etc/camera/camera_config.xml sysmiui/vendor/etc/camera/camera_config.xml
+	cp system/vendor/etc/camera/dualcamera.png sysmiui/vendor/etc/camera/dualcamera.png
+	cp system/vendor/etc/camera/dualcamera.png.bak sysmiui/vendor/etc/camera/dualcamera.png.bak
+	cp system/vendor/etc/camera/dualcamera_in.png sysmiui/vendor/etc/camera/dualcamera_in.png
+	cp system/vendor/etc/camera/dualcamera_in.png.bak sysmiui/vendor/etc/camera/dualcamera_in.png.bak
+	cp make/miui/morpho_lowlight4.0.xml sysmiui/vendor/etc/camera/morpho_lowlight4.0.xml
+	cp make/miui/whyred_ov13855_sunny_cn_i_chromatix.xml sysmiui/vendor/etc/camera/whyred_ov13855_sunny_cn_i_chromatix.xml
+	cp system/vendor/etc/media_profiles_V1_0.xml sysmiui/vendor/etc/media_profiles_V1_0.xml
+	cp system/vendor/etc/media_profiles_vendor.xml sysmiui/vendor/etc/media_profiles_vendor.xml
+	cp system/vendor/etc/mixer_paths.xml sysmiui/vendor/etc/mixer_paths.xml
+	cp make/miui/lib/libchromatix_ov13855_cpp_ds_chromatix.so sysmiui/vendor/lib/libchromatix_ov13855_cpp_ds_chromatix.so
+	cp make/miui/lib/libchromatix_ov13855_cpp_us_chromatix.so sysmiui/vendor/lib/libchromatix_ov13855_cpp_us_chromatix.so
+	cp make/miui/lib/libchromatix_ov13855_zsl_preview_bu64297.so sysmiui/vendor/lib/libchromatix_ov13855_zsl_preview_bu64297.so
+
 	echo 'make MIUI whyred.xml'
 	#fix whyred.xml for miui
-	rm -f sysmiui/etc/device_features/whyred.xml
-	cp system/etc/device_features/whyred.xml sysmiui/etc/device_features/whyred.xml
+	cp system/etc/device_features/whyred.xml $target
 	sed '
 	s/detection in camera CHANGED--/detection in camera--/
 	s/camera_age_detection">false/camera_age_detection">true/
@@ -25,15 +53,15 @@ prep_miui() {
 	s/front_fingerprint_sensor">true/front_fingerprint_sensor">false/
 	s/camera_magic_mirror">false/camera_magic_mirror">true/' <$target >$temp
 	mv $temp $target
-	echo 'make MIUI system'
-	# change system with sysmiui 	
+	
 	mv system systemp
-	mv sysmiui system	
+	mv sysmiui system
 }
 
 clean_miui() {
 	os=AOSP
 	mv system sysmiui
+	rm -R sysmiui
 	mv systemp system
 }
 
