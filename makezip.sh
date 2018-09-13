@@ -46,10 +46,10 @@ prep_twrp() {
 	rm -rf system/media
 	
 	echo 'prepare addon.d files'
-	cat tmp/restorstart > $lf
+	cat make/twrp/restorstart > $lf
 	find . -name '*.DS_Store' -type f -delete
 	find system/* -type f >> $lf
-	cat tmp/restorend >>$lf
+	cat make/twrp/restorend >>$lf
 	
 	echo 'prepare META-INF'
 	cp make/twrp/updater-script META-INF/com/google/android/updater-script

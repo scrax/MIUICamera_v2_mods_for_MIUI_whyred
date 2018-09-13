@@ -15,17 +15,10 @@ package_extract_dir("system", "/system");
 ui_print("       Setting permissions...       ");
 ui_print(" ");
 set_perm_recursive(0, 0, 0755, 0644, "/system/etc");
-set_perm_recursive(0, 0, 0755, 0644, "/system/media");
 set_perm_recursive(0, 0, 0755, 0644, "/system/framework");
 set_perm_recursive(0, 0, 0755, 0644, "/system/lib64");
 set_perm_recursive(0, 0, 0755, 0644, "/system/priv-app");
 set_perm_recursive(0, 0, 0755, 0644, "/system/vendor");
-
-ui_print("        Enable camera2 api...       ");
-ui_print(" ");
-package_extract_file("tmp/api.sh", "/tmp/api.sh");
-set_perm(0, 0, 0755, "/tmp/api.sh");
-run_program("/sbin/busybox", "sh", "/tmp/api.sh");
 
 ui_print("  Set vendor prop for audio fix...  ");
 ui_print(" ");
