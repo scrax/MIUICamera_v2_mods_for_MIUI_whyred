@@ -8,8 +8,6 @@ Confirmed working on other AOSP rom and Pie.
 
 No conflicts with gcam and camera2 API.
 
-No editing of build.prop by the module (conflicts free)
-
 ## Functions
 PHOTO
 

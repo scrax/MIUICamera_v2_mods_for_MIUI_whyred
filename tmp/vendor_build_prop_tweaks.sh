@@ -3,7 +3,6 @@
 vbp="/vendor/build.prop"
 sbp="/system/build.prop"
 dir="/system/media/audio/ui/"
-vprop=ro.vendor.audio.sdk.fluencetype=none
 
 audio_fix() {
 	cat <<EOF
@@ -14,7 +13,13 @@ VideoStop.ogg
 EOF
 }
 
-bprop() {
+vprop(){
+	cat <<EOF
+ro.vendor.audio.sdk.fluencetype=none
+EOF
+}
+
+sprop() {
 	cat <<EOF
 #Name
 ro.product.model=Redmi Note 5
@@ -67,59 +72,65 @@ persist.ov13855_sunny.light.lux=370
 persist.s5k3l8_ofilm.low.lux=379
 persist.s5k3l8_ofilm.light.lux=367
 
-#
+# variant cortex a53
 dalvik.vm.isa.arm64.variant=cortex-a53
 dalvik.vm.isa.arm.variant=cortex-a53
 EOF
 }
 
+#Edit build.prop
+prop_edit(){
+	if [ -f $bp.bak ]; 
+  		then
+    		rm -rf $bp
+    		cp $bp.bak $bp
+  		else
+    		cp $bp $bp.bak
+	fi
+	echo " " >> $bp
+	$list | while read prop ;
+ 		do
+    		export newprop=$(echo ${prop} | cut -d '=' -f1)
+    		sed -i "/${newprop}/d" $bp
+    		echo $prop >> $bp
+		done
+}
+
 #Edit vendor/build.prop
 vendor_prop_edit(){
-if [ -f $vbp.bak ]; 
-  then
-    rm -rf $vbp
-    cp $vbp.bak $vbp
-  else
-    cp $vbp $vbp.bak
-fi
-
-echo " " >> $vbp
-
-#for mod in vendor_build_prop_tweaks;
-#  do
-
-#    for prop in `cat /tmp/$mod`;do
-      export newvprop=$(echo ${vprop} | cut -d '=' -f1)
-      sed -i "/${newvprop}/d" $vbp
-      echo $vprop >> $vbp
-#    done
-#done
+	echo 'Edit vendor build.prop'
+	bp=$vbp
+	list=$vprop
+	prop_edit
 }
 
 #Edit build.prop
-build_prop_edit(){
-if [ -f $sbp.bak ]; 
-  then
-    rm -rf $sbp
-    cp $sbp.bak $sbp
-  else
-    cp $sbp $sbp.bak
-fi
+system_prop_edit(){
+	echo 'Edit system build.prop'
+	bp=$sbp
+	list=$sprop
+	prop_edit
+}
 
-echo " " >> $sbp
-
-bprop | while read sprop ;
-  do
-    export newsprop=$(echo ${sprop} | cut -d '=' -f1)
-    sed -i "/${newsprop}/d" $sbp
-    echo $sprop >> $sbp
-
-done
+camera_sound_fix(){
+	echo 'Starting camera sound fix'
+	audio_fix | while read name ;
+  		do
+    		if [ -f $dir$name.bak ];
+      			then
+        			echo Camera sound: "$name" already fixed
+        			#mv $dir$name.bak $dir$name
+      			else
+        			echo Fixing camera sound: "$name"
+        			mv $dir$name $dir$name.bak
+    		fi
+		done
 }
 
 busybox mount /vendor
-busybox mount /data
+busybox mount /system
+#busybox mount /data
 
 vendor_prop_edit
-build_prop_edit
+system_prop_edit
 camera_sound_fix
