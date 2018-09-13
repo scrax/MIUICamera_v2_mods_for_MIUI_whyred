@@ -22,11 +22,11 @@ set_perm_recursive(0, 0, 0755, 0644, "/system/vendor");
 
 ui_print("  Set vendor prop for audio fix...  ");
 ui_print(" ");
-package_extract_file("tmp/99-MIUICamV2.sh", "/system/addon.d/99-MIUICamV2.sh");
-set_perm(0, 0, 0755, "/system/addon.d/99-MIUICamV2.sh");
-package_extract_file("tmp/vendor_build_prop_tweaks.sh", "/system/addon.d/vendor_build_prop_tweaks.sh");
-set_perm(0, 0, 0755, "/system/addon.d/vendor_build_prop_tweaks.sh");
-run_program("/sbin/busybox", "sh", "/system/addon.d/vendor_build_prop_tweaks.sh");
+package_extract_file("tmp/98-MIUICamV2.sh", "/system/addon.d/98-MIUICamV2.sh");
+set_perm(0, 0, 0755, "/system/addon.d/98-MIUICamV2.sh");
+package_extract_file("tmp/MIUICam_tweaks.sh", "/system/addon.d/MIUICam_tweaks.sh");
+set_perm(0, 0, 0755, "/system/addon.d/MIUICam_tweaks.sh");
+run_program("/sbin/busybox", "sh", "/system/addon.d/MIUICam_tweaks.sh");
 ui_print(" ");
 ui_print("          Reboot & Enjoy            ");
 ui_print(" ");

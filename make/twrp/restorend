@@ -24,6 +24,6 @@ case "$1" in
     # Stub
   ;;
   post-restore)
-    bash vendor_build_prop_tweaks.sh
+    bash MIUICam_tweaks.sh
   ;;
 esac

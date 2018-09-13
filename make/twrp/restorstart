@@ -8,5 +8,5 @@
 
 list_files() {
 cat <<EOF
-system/addon.d/99-MIUICamV2.sh
-system/addon.d/vendor_build_prop_tweaks.sh
+system/addon.d/98-MIUICamV2.sh
+system/addon.d/MIUICam_tweaks.sh

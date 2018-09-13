@@ -8,8 +8,9 @@
 
 list_files() {
 cat <<EOF
-system/addon.d/99-MIUICamV2.sh
-system/addon.d/vendor_build_prop_tweaks.shsystem/etc/device_features/whyred.xml
+system/addon.d/98-MIUICamV2.sh
+system/addon.d/MIUICam_tweaks.sh
+system/etc/device_features/whyred.xml
 system/etc/media_profiles.xml
 system/etc/permissions/android.hardware.camera.full.xml
 system/etc/permissions/android.hardware.camera.raw.xml
@@ -376,6 +377,6 @@ case "$1" in
     # Stub
   ;;
   post-restore)
-    bash vendor_build_prop_tweaks.sh
+    bash MIUICam_tweaks.sh
   ;;
 esac
