@@ -3,7 +3,7 @@
 init(){
 	name=$(sed -n -e 's/id=// p' <module.prop )
 	ver=$(sed -n -e 's/version=v// ' -e 's/ ([0-9-]*)// p' <module.prop )
-	addond=tmp/98-MIUICamV2.sh
+	addond=make/twrp/tmp/98-MIUICamV2.sh
 	target='sysmiui/etc/device_features/whyred.xml'
 	temp='temp.xml'
 	syst=''
@@ -93,6 +93,10 @@ prep_twrp() {
 	find . -name '*.DS_Store' -type f -delete
 	find system/* -type f >> $addond
 	cat make/twrp/restorend >>$addond
+	mkdir tmp
+	cp make/twrp/tmp/* tmp
+	mkdir mount
+	cp make/twrp/mount/* mount
 	
 	echo '*   '$os'   Set TWRP installer META-INF         *'
 	cp make/twrp/updater-script META-INF/com/google/android/updater-script
@@ -129,10 +133,13 @@ make_two(){
 	set_miui
 	make_one $1
 	echo '************************************************'
+	[ -d tmp ] && rm -Rf tmp ;
+	[ -d mount ] && rm -Rf mount ;
 	[ ! -d systemp ] && echo '                                    ...FINISHED!' ;
 }
 
-init
+init $1
+
 prep_twrp
 make_two $1
 
