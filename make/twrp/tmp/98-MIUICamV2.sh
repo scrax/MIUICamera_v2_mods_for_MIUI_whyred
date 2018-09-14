@@ -117,8 +117,6 @@ system/priv-app/MiuiCamera/lib/arm64/vendor.qti.hardware.camera.device@1.0.so
 system/priv-app/MiuiCamera/MiuiCamera.apk
 system/priv-app/MiuiCamera/oat/arm64/MiuiCamera.odex
 system/priv-app/MiuiCamera/oat/arm64/MiuiCamera.vdex
-system/usr/keylayout/uinput-fpc.kl
-system/usr/keylayout/uinput-goodix.kl
 system/vendor/etc/acdbdata/adsp_avs_config.acdb
 system/vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
 system/vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
