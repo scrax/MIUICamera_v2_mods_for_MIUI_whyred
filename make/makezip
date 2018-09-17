@@ -111,7 +111,7 @@ make_one(){
 }
 
 make_two(){
-	[ $syst == TWRP ] && cp make/twrp/updater-script META-INF/com/google/android/update-binary || cp make/magisk/updater-script META-INF/com/google/android/update-binary ;
+	[ $syst == TWRP ] && cp make/twrp/update-binary META-INF/com/google/android/update-binary || cp make/magisk/update-binary META-INF/com/google/android/update-binary ;
 	make_one $1
 	set_miui
 	make_one $1
