@@ -4,12 +4,28 @@ vbp="/vendor/build.prop"
 sbp="/system/build.prop"
 dir="/system/media/audio/ui/"
 
-audio_fix() {
+init(){
+	busybox umount /vendor
+	busybox umount /system
+	busybox mount /vendor
+	busybox mount /system	
+}
+
+audio_fix(){
 	cat <<EOF
 camera_click.ogg
 camera_focus.ogg
 VideoRecord.ogg
 VideoStop.ogg
+EOF
+}
+
+shutter_files(){
+	cat <<EOF
+system/usr/keylayout/uinput-fpc.kl
+system/usr/keylayout/uinput-goodix.kl
+system/vendor/usr/keylayout/uinput-fpc.kl
+system/vendor/usr/keylayout/uinput-goodix.kl
 EOF
 }
 
@@ -19,7 +35,7 @@ ro.vendor.audio.sdk.fluencetype=none
 EOF
 }
 
-sprop() {
+sprop(){
 	cat <<EOF
 #### ADDED BY MIUI CAMERA V2 MOD ####
 # Device Names
@@ -64,6 +80,8 @@ persist.s5k3l8_ofilm.light.lux=367
 # Variant cortex a53
 dalvik.vm.isa.arm64.variant=cortex-a53
 dalvik.vm.isa.arm.variant=cortex-a53
+# Disable Camera Sound
+camera.shutter_sound.blacklist=com.android.camera
 EOF
 }
 
@@ -87,12 +105,7 @@ prop_edit(){
 }
 
 list(){
-	if [ $1 == vprop ]
-	  then
-	    vprop
-	  else
-	    sprop
-	fi
+	[ $1 == vprop ] && vprop || sprop ;
 }
 
 #Edit vendor/build.prop
@@ -111,7 +124,7 @@ system_prop_edit(){
 
 camera_sound_fix(){
 	echo 'Starting camera sound fix'
-	audio_fix | while read name ;
+    audio_fix | while read name ;
   		do
     		if [ -f $dir$name.bak ];
       			then
@@ -124,10 +137,28 @@ camera_sound_fix(){
 		done
 }
 
-busybox mount /vendor
-busybox mount /system
-#busybox mount /data
+fp_shutter(){
+	shutter_files | while read filename ;
+	  do
+	  	if [ -f $filename.bak ];
+	  		then
+	  			rm -rf $filename
+	  			cp $filename.bak $filename
+	  		else
+	  			cp $filename $filename.bak
+	  	fi
+	  	echo 'key 96 DPAD_CENTER' > $filename
+		#echo '\#key 102   HOME' >> $filename
+		#echo '\#key 105   DPAD_LEFT' >> $filename
+		#echo '\#key 106   DPAD_RIGHT' >> $filename
+	    echo 'key 353 CAMERA' >> $filename
+	  done
+}
 
+
+
+init
 vendor_prop_edit
 system_prop_edit
-camera_sound_fix
+#camera_sound_fix
+#fp_shutter
