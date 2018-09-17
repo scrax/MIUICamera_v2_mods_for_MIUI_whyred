@@ -3,7 +3,7 @@
 init(){
 	name=$(sed -n -e 's/id=// p' <module.prop )
 	ver=$(sed -n -e 's/version=v// ' -e 's/ ([0-9-]*)// p' <module.prop )
-	addond=make/twrp/tmp/98-MIUICamV2.sh
+	addond=make/twrp/addon.d/98-MIUICamV2.sh
 	target='sysmiui/etc/device_features/whyred.xml'
 	temp='temp.xml'
 	syst=''
@@ -11,10 +11,7 @@ init(){
 
 	echo 'START '$name'-'$1' build...'
 	#echo '*                 Remove media                 *'
-	[ -d system/media ] && rm -Rf system/media ;
-	[ -d system/usr ] && rm -Rf system/usr ;
 	[ -d sysmiui ] && rm -Rf sysmiui ;
-	[ -f $addond ] && rm -Rf $addond ;
 }
 
 set_miui() {
@@ -24,8 +21,6 @@ set_miui() {
 		echo '*----------------------------------------------*'
 		echo '*          Prepare AOSP system                 *'
 		echo '*   '$os'   Restore system                      *'
-		#mv system sysmiui
-		#rm -R sysmiui
 		rm -Rf system
 		mv systemp system 
 	  else
@@ -60,7 +55,6 @@ set_miui() {
 		cp make/miui/lib/libchromatix_ov13855_zsl_preview_bu64297.so sysmiui/vendor/lib/libchromatix_ov13855_zsl_preview_bu64297.so
 
 		echo '*   '$os'   Edit whyred.xml for MIUI            *'
-		
 		#fix whyred.xml for miui
 		cp system/etc/device_features/whyred.xml $target
 		sed '
@@ -80,76 +74,96 @@ set_miui() {
 		# change system with sysmiui 	
 		mv system systemp
 		mv sysmiui system
+		
+		#add addon.d
+		[ $syst == TWRP ] && make_addond ;
+		[ $syst == TWRP ] && rm -rf system/addon.d/MIUICam_tweaks ;	
 	fi
 }
 
-
-prep_twrp() {
-	echo '************************************************'
-	echo '*          TWRP                                *'
-	echo '************************************************'
-	syst=TWRP
-	
-	echo '*          Prepare addon.d files               *'
-	cat make/twrp/restorstart > $addond
-	find . -name '*.DS_Store' -type f -delete
-	find system/* -type f >> $addond
-	cat make/twrp/restorend >>$addond
-	mkdir tmp
-	cp make/twrp/tmp/* tmp
-	mkdir mount
-	cp make/twrp/mount/* mount
-	#mkdir system/usr
-	#mkdir system/usr/keylayout
-	#cp make/twrp/usr/keylayout/* system/usr/keylayout
-	echo '*   '$os'   Set TWRP installer META-INF         *'
-	cp make/twrp/updater-script META-INF/com/google/android/updater-script
-	cp make/twrp/update-binary META-INF/com/google/android/update-binary
+make_zip(){
+	if [ $syst == MAGISK ];
+	  then
+		echo '*          Make zip: '"$os" "$syst" v"$ver"'         *'
+	    zip -r -X -q $os-$syst-$name-$ver\_$1.zip  system META-INF common README.md config.sh module.prop 
+	  else
+		echo '*          Make zip: '"$os" "$syst" v"$ver"'           *'
+	    zip -r -X -q $os-$syst-$name-$ver\_$1.zip system META-INF 
+	fi
 }
 
-prep_magisk(){
-	echo '*          MAGISK                              *'
-	echo '************************************************'
-	syst=MAGISK
-	
-	echo '*          Clean up                            *'
-	#[ -d systemp ] && cp -R make/magisk/media systemp/media || cp -R make/magisk/media system/media ;
-	[ -d systemp/usr ] && rm -Rf systemp/usr ;	
-	
-	echo '*   '$os'   Set Magisk module META-INF          *'
-	cp make/magisk/updater-script META-INF/com/google/android/updater-script
-	cp make/magisk/update-binary META-INF/com/google/android/update-binary
+fake_zip(){
+	[ $syst == MAGISK ] && echo '*          Fake zip: '"$os" "$syst" v"$ver"'         *' || echo '*          Fake zip: '"$os" "$syst" v"$ver"'           *' ;
 }
 
 make_one(){
 	[ -d systemp ] && os=MIUI || os=AOSP ;
-	if [ $syst == MAGISK ];
-	  then
-		echo '*          Make zip: '"$os" "$syst" v"$ver"'         *'
-	  	zip -r -X -q $os-$syst-$name-$ver\_$1.zip  system META-INF common README.md config.sh module.prop 
-	  else
-		echo '*          Make zip: '"$os" "$syst" v"$ver"'           *'
-	    zip -r -X -q $os-$syst-$name-$ver\_$1.zip system mount META-INF tmp
+	#Set META-INF
+	cp make/magisk/updater-script META-INF/com/google/android/updater-script
+	if [ $os == MIUI ];
+	  then	  #MIUI
+	  	[ $syst == TWRP ] && cp make/miui/twrp/updater-script META-INF/com/google/android/updater-script ;
+	    make_zip;
+	  else	  #AOSP
+	    [ $syst == TWRP ] && cp make/twrp/updater-script META-INF/com/google/android/updater-script ;
+	    make_zip;
 	fi
 }
 
 make_two(){
+	[ $syst == TWRP ] && cp make/twrp/updater-script META-INF/com/google/android/update-binary || cp make/magisk/updater-script META-INF/com/google/android/update-binary ;
 	make_one $1
 	set_miui
 	make_one $1
 	echo '************************************************'
-	[ ! -d systemp ] && echo '                                    ...FINISHED!' ;
+}
+
+make_addond(){
+	[ $os == MIUI ] && cat make/miui/twrp/restorstart >$addond || cat make/twrp/restorstart >$addond ;
+	find . -name '*.DS_Store' -type f -delete
+	[ -d systemp ] && find systemp/* -type f >>$addond || find system/* -type f >>$addond ;
+	[ $os == MIUI ] && cat make/miui/twrp/restorend >>$addond || cat make/twrp/restorend >>$addond ;
+	[ -d systemp ] && [ ! -d systemp/addon.d ] && mkdir systemp/addon.d || [ ! -d system/addon.d ] && mkdir system/addon.d ;
+	[ -d systemp ] && cp make/twrp/addon.d/* systemp/addon.d || cp make/twrp/addon.d/* system/addon.d ;	
+}
+
+make_twrp() {
+	syst=TWRP
+	echo '************************************************'
+	echo '*          '$syst'                                *'
+	echo '************************************************'
+	
+	echo '*          Prepare addon.d files               *'
+	make_addond
+	echo '*   '$os'   Set TWRP installer META-INF         *'
+	
+	make_two $1
+	
+	# clean up addon.d
+	[ -d systemp/addon.d ] && rm -Rf systemp/addon.d || rm -Rf system/addon.d ;	
+}
+
+make_magisk(){
+	syst=MAGISK
+	echo '*          '$syst'                              *'
+	echo '************************************************'
+	
+	echo '*          Clean up                            *'
+	#[ -d systemp ] && cp -R make/magisk/media systemp/media || cp -R make/magisk/media system/media ;
+	
+	echo '*   '$os'   Set Magisk module META-INF          *'
+	
+	make_two $1
+	
+	# clean up media
+	#[ -d systemp/media ] && rm -Rf systemp/media || rm -Rf system/media ;	
 }
 
 clean(){
-	[ -d tmp ] && rm -Rf tmp ;
-	[ -d mount ] && rm -Rf mount ;
-	[ -d system/usr ] && rm -Rf system/usr ;	
+	echo '                                    ...FINISHED!' ;
 }
 
 init $1
-prep_twrp
-make_two $1
-prep_magisk
-make_two $1
+make_twrp $1
+make_magisk $1
 clean

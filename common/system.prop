@@ -43,3 +43,5 @@ persist.s5k3l8_ofilm.light.lux=367
 # Variant cortex a53
 dalvik.vm.isa.arm64.variant=cortex-a53
 dalvik.vm.isa.arm.variant=cortex-a53
+# Disable Camera Sound
+camera.shutter_sound.blacklist=com.android.camera
