@@ -84,12 +84,27 @@ v0.17     Added more libs, HEVC codec, removed age&gender, obj. tracking and mag
 
 v0.18     Revert to h264, mod watermark in all version, added build.prop edit (for pie support).
 
+v0.19     Add super resolution in MIUI build, removed audio fix and FP shutter from magisk AOSP (made separate modules).
+
 ## Instructions
 
-Install module in magisk or TWRP (on your choice) and reboot;
+Select installer you need to choose:
+
+- Magisk if you have it installed and want easy install/uninstall
+- TWRP if you want to keep system rootless
+
+and select:
+
+- AOSP if on Lineage or any AOSP based ROM
+- MIUI if you are on a MIUI based ROM
+
+Install Magisk modules in magisk or TWRP (on your choice) and reboot;
+
 For TWRP installer make a backup of system and vendor in TWRP to unistall.
 
-**camera2 API is not required, but will be enabled by the module**
+For Magisk AOSP since v0.19 you can choose to install CameraSoundFix_0.1.zip and FPShutter_0.1.zip also to disable camera sounds and enable system wide fingerprint shutter. They are now two separated modules so people can use them on other ports too.
+
+**camera2 API is not required (but will be enabled by the module since v0.17)**
 
 ## Links
 [Module XDA Forum Thread](https://forum.xda-developers.com/redmi-note-5-pro/themes/magisk-miui-camera-v2-port-mods-t3830475 "Module official XDA thread")
