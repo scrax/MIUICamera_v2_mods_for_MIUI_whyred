@@ -88,21 +88,9 @@ v0.19     Add super resolution in MIUI build, removed audio fix and FP shutter f
 
 ## Instructions
 
-Select installer you need to choose:
-
-- Magisk if you have it installed and want easy install/uninstall
-- TWRP if you want to keep system rootless
-
-and select:
-
-- AOSP if on Lineage or any AOSP based ROM
-- MIUI if you are on a MIUI based ROM
-
 Install Magisk modules in magisk or TWRP (on your choice) and reboot;
 
-For TWRP installer make a backup of system and vendor in TWRP to unistall.
-
-For Magisk AOSP since v0.19 you can choose to install CameraSoundFix_0.1.zip and FPShutter_0.1.zip also to disable camera sounds and enable system wide fingerprint shutter. They are now two separated modules so people can use them on other ports too.
+For Magisk AOSP since v0.19 you can choose to install [ComSoundFix_toggle](https://github.com/Magisk-Modules-Repo/MIUIcamera-v2-for-whyred-Redmi-Note-5-pro-/raw/master/make/add-ons/CamSoundFix_toggle-TWRP_0.2.zip "CamSoundFix_toggle") and [FPShutter_toggle](https://github.com/Magisk-Modules-Repo/MIUIcamera-v2-for-whyred-Redmi-Note-5-pro-/raw/master/make/add-ons/CamSoundFix_toggle-TWRP_0.2.zip "FPShutter_toggle") also to disable camera sounds and enable system wide fingerprint shutter. They are now two separated modules so people can use them on other ports too.
 
 **camera2 API is not required (but will be enabled by the module since v0.17)**
 
