@@ -40,6 +40,7 @@ LATESTARTSERVICE=false
 # Set what you want to show when installing your mod
 
 print_modname() {
+<<<<<<< HEAD
   ui_print "******************************"
   ui_print "      MIUIcamera v2 for:      "
   ui_print "            whyred            "
@@ -53,6 +54,11 @@ print_modname() {
   ui_print "             v0.19            "
   ui_print "          2018-09-15          "
   ui_print "******************************"
+=======
+  ui_print "*******************************"
+  ui_print "     Magisk Module Template    "
+  ui_print "*******************************"
+>>>>>>> topjohnwu/17000
 }
 
 ##########################################################################################
