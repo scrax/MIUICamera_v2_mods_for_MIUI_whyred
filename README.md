@@ -1,12 +1,7 @@
-# **MIUI Camera v2 port for whyred (Redmi note 5 / pro)**
+# **MIUI Camera v2 mods for MIUI based ROM on whyred (Redmi note 5 / pro)**
 
 ## Description
-This module brings MIUI Camera v2 (from Mi A2) to aosp and Los based ROM on whyred.
-
-Tested on LineageOS 15.1 (microG version) android Oreo.
-Confirmed working on other AOSP rom on Pie and MIUI.
-
-No conflicts with gcam and camera2 API (enabled by the module).
+This module enables more functions in MIUI Camera v2  to MIUI based ROM on whyred.
 
 ## Functions
 PHOTO
@@ -30,7 +25,7 @@ PHOTO
 - Torch mode (back and front)
 - Age & gender and magic mirror modes (front camera)
 - Increased burst shoot (100 pics)
-- Fingerprint shutter enabled by default (system wide)
+- Super resolution sharing (on supported apps)
 
 VIDEO
 
@@ -42,9 +37,10 @@ VIDEO
 AUDIO
 
 - Audio recording fix (by @rocker00)
-- AOSP camera sound toggle fix
 
+## Instructions
 
+Install Magisk modules in magisk or TWRP (on your choice) and reboot;
 
 ## Changelog
 
@@ -86,13 +82,9 @@ v0.18     Revert to h264, mod watermark in all version, added build.prop edit (f
 
 v0.19     Add super resolution in MIUI build, removed audio fix and FP shutter from magisk AOSP (made separate modules).
 
-## Instructions
+v0.20     First AOSP module in repo
 
-Install Magisk modules in magisk or TWRP (on your choice) and reboot;
-
-For Magisk AOSP since v0.19 you can choose to install [ComSoundFix_toggle](https://github.com/Magisk-Modules-Repo/MIUIcamera-v2-for-whyred-Redmi-Note-5-pro-/raw/master/make/add-ons/CamSoundFix_toggle-TWRP_0.2.zip "CamSoundFix_toggle") and [FPShutter_toggle](https://github.com/Magisk-Modules-Repo/MIUIcamera-v2-for-whyred-Redmi-Note-5-pro-/raw/master/make/add-ons/CamSoundFix_toggle-TWRP_0.2.zip "FPShutter_toggle") also to disable camera sounds and enable system wide fingerprint shutter. They are now two separated modules so people can use them on other ports too.
-
-**camera2 API is not required (but will be enabled by the module since v0.17)**
+v0.21     New module for MIUI in Magisk repo
 
 ## Links
 [Module XDA Forum Thread](https://forum.xda-developers.com/redmi-note-5-pro/themes/magisk-miui-camera-v2-port-mods-t3830475 "Module official XDA thread")
@@ -102,12 +94,5 @@ For Magisk AOSP since v0.19 you can choose to install [ComSoundFix_toggle](https
 [Latest stable Magisk](http://www.tiny.cc/latestmagisk)
 
 ## Contributions
-slow-mo fix by @Dyneteve
-
-sound fix by @lawong
 
 audio recording improved by @rocker00
-
-video recording improvements by @carlosggb and @ARNOB XENON
-
-Pie fix by @jhenrique09
