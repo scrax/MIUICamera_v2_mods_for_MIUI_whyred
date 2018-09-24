@@ -164,7 +164,7 @@
     <bool name="is_camera_preview_with_subthread_looper">true</bool>
     <!--whether add watermark in camera app-->
     <bool name="is_camera_app_water_mark">true</bool>
-    <!--whether support tiltshift  in camera-->
+    <!--whether support tiltshift in camera-->
     <bool name="support_camera_tilt_shift">true</bool>
     <!--whether support snap with screen off in camera CHANGED-->
     <bool name="support_camera_quick_snap">true</bool>
@@ -287,7 +287,7 @@
     <bool name="is_legacy_face_beauty">false</bool>
     <!--whether front camera support hdr or not-->
     <bool name="support_front_hdr">true</bool>
-　　<!--whether front camera support hht or not-->
+　　	<!--whether front camera support hht or not-->
     <bool name="support_front_hht">true</bool>
     <!--whether front camera support bokeh or not-->
 　  <bool name="support_front_bokeh">true</bool>
@@ -303,6 +303,8 @@
     <bool name="disable_video_stabilization_in_speed_slow_mode">false</bool>
     <!--whether add algorithm in file name or not-->
     <bool name="enable_algorithm_in_file_suffix">false</bool>
+	<!--camera max quality which support high frame rate,1:480 2:720 3:1080-->
+    <integer name="support_camera_hfr_max_quality">3</integer>
     <!--whether enable face detection in video and funmode or not-->
     <bool name="support_camera_video_face_detection">true</bool>
     <!--whether enable portrait zoom CHANGED-->
@@ -310,7 +312,7 @@
     <!-- Camera HDR default value CHANGED (was 3)-->
     <integer name="support_camera_hdr_default_value">5</integer>
     <integer name="support_camera_front_hdr_default_value">3</integer>
-    <!--whether camera support portrait mode switch -->
+    <!--whether camera support portrait mode switch-->
     <bool name="camera_is_support_portrait_switch">true</bool>
     <!--whether process clcc in hfp pending state CHANGED-->
     <bool name="process_clcc_in_pending_state">true</bool>
@@ -347,4 +349,36 @@
     <bool name="support_3d_face_beauty">true</bool>
     <!-- whether this device is Android one -->
     <bool name="is_android_one_device">false</bool>
+    <!--whether sensor_has_latency-->
+    <bool name="sensor_has_latency">true</bool>
+    <!-- portrait mode ai scene supported-->
+	<bool name="camera_portrait_mode_supported_ai_scene">true</bool>
+	<!-- whether camera support ai lens-->
+    <bool name="camera_support_ai_lens">true</bool>
+	<!-- whether support front AI scene -->
+    <bool name="camera_supported_front_ai_scene">true</bool>
+    <!-- whether support camera filter in back portrait mode-->
+	<bool name="support_camera_filter_in_back_portrait_mode">true</bool>
+	<!-- whether support camera continuous iso-->
+	<bool name="support_camera_continuous_iso">true</bool>
+	<!-- whether support camera manual function et-->
+	<bool name="support_camera_manual_function_et">true</bool>
+	<!-- whether support camera manual function focus-->
+	<bool name="support_camera_manual_function_focus">true</bool>
+	<!-- whether support camera ubifocus-->
+	<bool name="support_camera_ubifocus">true</bool>
+	<!-- whether support psensor pocket mode-->
+	<bool name="support_psensor_pocket_mode">true</bool>
+	<!-- whether is back bokeh supported-->
+	<bool name="is_back_bokeh_supported">true</bool>
+	<!-- whether use camera still effect image-->
+	<bool name="is_camera_use_still_effect_image">false</bool>
+	<!-- enable front video quality 1080p-->
+	<bool name="is_front_video_quality_1080p">true</bool>
+	<!-- whether support capture intelligent switch-->
+	<bool name="is_support_capture_intelligent_switch">false</bool>
+	<!-- whether support video intelligent switch-->
+	<bool name="is_support_video_intelligent_switch">false</bool>
+	<!--camera max quality which support high frame rate,1:480 2:720 3:1080-->
+    <integer name="support_camera_hfr_max_quality">3</integer>
 </features>
