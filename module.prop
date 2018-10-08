@@ -1,7 +1,7 @@
 id=MIUIcamerav2_whyred_MIUI
 name=MIUIcamera v2 MODs for whyred (Redmi Note 5 / pro)
-version=v0.21 (2018-09-18)
-versionCode=021
+version=v1.0_RC1
+versionCode=022
 author=Scrax
 description=MIUI camera v2 adds: AI mode, full manual, expanded burst shot, live HDR, group selfie, torch mode, beautify pro, focus peaking, 4k video mode, full size panorama and effects, better audio record (by rocker00) and low light shot and more. For MIUI based ROM only!
 minMagisk=1500

@@ -29,9 +29,9 @@ PHOTO
 
 VIDEO
 
-- 4K record (30fps)
+- 4K record (30fps), 1080p60fps (MIUI 10)
 - Video image stabilization (software)
-- Slow motion
+- Slow motion (1080p,120fps - 720p,120fps)
 - Time lapse
 
 AUDIO
@@ -85,6 +85,8 @@ v0.19     Add super resolution in MIUI build, removed audio fix and FP shutter f
 v0.20     First AOSP module in repo
 
 v0.21     New module for MIUI in Magisk repo
+
+v1.0_RC1     Added HFR 1080@120fps and better video quality record, other minor fixes.
 
 ## Links
 [Module XDA Forum Thread](https://forum.xda-developers.com/redmi-note-5-pro/themes/magisk-miui-camera-v2-port-mods-t3830475 "Module official XDA thread")
